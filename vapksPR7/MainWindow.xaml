@@ -1,0 +1,97 @@
+﻿<Window x:Class="vapksPR7.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Личная библиотека" Height="550" Width="950">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+            <Grid Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="5">
+                    <Label Content="Название"/>
+                    <TextBox x:Name="NameBox" Width="120"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="5">
+                    <Label Content="Фамилия"/>
+                    <TextBox x:Name="AuthorLastBox" Width="100"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Margin="5">
+                    <Label Content="Имя"/>
+                    <TextBox x:Name="AuthorNameBox" Width="100"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="3" Margin="5">
+                    <Label Content="Отчество"/>
+                    <TextBox x:Name="AuthorMiddleBox" Width="100"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="4" Margin="5">
+                    <Label Content="Год"/>
+                    <TextBox x:Name="YearBox" Width="60"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="5" Margin="5">
+                    <Label Content="Жанр"/>
+                    <ComboBox x:Name="GenreBox" Width="120" DisplayMemberPath="genre"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="6" Margin="5">
+                    <Label Content="Статус"/>
+                    <ComboBox x:Name="StatusBox" Width="120" DisplayMemberPath="status1"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="7" Margin="5">
+                    <Label Content=" "/>
+                    <Button Content="Добавить" Width="100" Click="Add_Click"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="8" Margin="5">
+                    <Label Content=" "/>
+                    <Button Content="Редактировать" Width="100" Click="Edit_Click"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="9" Margin="5">
+                    <Label Content=" "/>
+                    <Button Content="Удалить" Width="100" Click="Delete_Click"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="10" Margin="5">
+                    <Label Content=" "/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Фильтр" Width="80" Margin="0,0,5,0" Click="Filter_Click"/>
+                        <Button Content="Сброс" Width="80" Click="ResetFilter_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
+        <DataGrid x:Name="BooksGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Автор" Binding="{Binding Author}" Width="*"/>
+                <DataGridTextColumn Header="Год" Binding="{Binding Year}" Width="70"/>
+                <DataGridTextColumn Header="Жанр" Binding="{Binding Genre}" Width="100"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

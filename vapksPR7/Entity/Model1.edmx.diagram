@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="838e6490cd8e4bf7a930a9ca8aa80b94" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="vapksPR7Model.author" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="vapksPR7Model.books" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="vapksPR7Model.genres" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="vapksPR7Model.status" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="vapksPR7Model.process" Width="1.5" PointX="5" PointY="2" />
+        <EntityTypeShape EntityType="vapksPR7Model.sysdiagrams" Width="1.5" PointX="5.375" PointY="5.75" />
+        <AssociationConnector Association="vapksPR7Model.FK_books_author" />
+        <AssociationConnector Association="vapksPR7Model.FK_books_genres" />
+        <AssociationConnector Association="vapksPR7Model.FK_process_books" />
+        <AssociationConnector Association="vapksPR7Model.FK_process_status" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
