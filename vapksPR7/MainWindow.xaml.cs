@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
@@ -12,6 +13,7 @@ namespace vapksPR7
     {
         ObservableCollection<BookItem> books;
         ICollectionView booksView;
+        bool isDarkTheme = false;
 
         public MainWindow()
         {
@@ -127,6 +129,19 @@ namespace vapksPR7
 
             booksView.Filter = null;
             booksView.Refresh();
+        }
+
+        private void ThemeToggle_Click(object sender, RoutedEventArgs e)
+        {
+            ResourceDictionary newTheme;
+            if (!isDarkTheme)
+                newTheme = new ResourceDictionary() { Source = new Uri("DarkTheme.xaml", UriKind.Relative) };
+            else
+                newTheme = new ResourceDictionary() { Source = new Uri("LightTheme.xaml", UriKind.Relative) };
+
+            Application.Current.Resources.MergedDictionaries.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(newTheme);
+            isDarkTheme = !isDarkTheme;
         }
     }
 }
